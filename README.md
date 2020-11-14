@@ -73,12 +73,12 @@ This repository contains plugins and themes obtained from other sources. Each on
 
 ### Other
 
-kolourpaint
-bpytop
-ttf-ubraille
-xfce4-power-manager
-nm-manager-applet
-thunar
-tumbler
-gvfs
-featherpad
+* kolourpaint
+* bpytop
+* ttf-ubraille
+* xfce4-power-manager
+* nm-manager-applet
+* thunar
+* tumbler
+* gvfs
+* featherpad
