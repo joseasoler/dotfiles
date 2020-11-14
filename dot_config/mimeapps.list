@@ -1,0 +1,13 @@
+[Default Applications]
+application/pdf=firefox.desktop;libreoffice-draw.desktop;org.inkscape.Inkscape.desktop;
+application/xhtml+xml=firefox.desktop;
+application/xhtml_xml=firefox.desktop;
+application/xml=firefox.desktop;
+image/gif=feh.desktop;org.kde.kolourpaint.desktop;
+image/jpeg=feh.desktop;org.kde.kolourpaint.desktop;
+image/png=feh.desktop;org.kde.kolourpaint.desktop;
+image/webp=feh.desktop;
+text/html=firefox.desktop;
+text/xml=firefox.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
