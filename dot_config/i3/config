@@ -236,3 +236,6 @@ set $volumestep 5
 bindsym XF86AudioRaiseVolume exec $volumepath -np -t $statuscmd -u $statussig -P up $volumestep
 bindsym XF86AudioLowerVolume exec $volumepath -np -t $statuscmd -u $statussig -P down $volumestep
 bindsym XF86AudioMute        exec $volumepath -np -t $statuscmd -u $statussig -P mute
+
+# Play a short beep indicating that the configuration is reloaded. Also starts the pulseaudio daemon.
+exec_always --no-startup-id play -nq -t pulseaudio synth 0.05 sine 300
