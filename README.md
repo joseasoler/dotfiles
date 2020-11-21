@@ -23,7 +23,6 @@ This repository contains plugins and themes obtained from other sources. Each on
 * xcb-util-xrm
 * cava
 * arandr
-* autorandr
 * sox
 * nm-applet
 
