@@ -10,7 +10,8 @@ interval=3600
 markup=pango
 
 [cpu_data]
-command=~/.config/i3blocks/scripts/cpu_data.py
+# ToDo set to the Zen 3 temperature sensor when the 5.10 kernel is released.
+command=~/.config/i3blocks/scripts/cpu_data.py k10temp
 interval=15
 markup=pango
 
