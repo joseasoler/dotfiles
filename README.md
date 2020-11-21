@@ -25,6 +25,7 @@ This repository contains plugins and themes obtained from other sources. Each on
 * arandr
 * autorandr
 * sox
+* nm-applet
 
 ### Status bar
 
@@ -83,3 +84,5 @@ This repository contains plugins and themes obtained from other sources. Each on
 * tumbler
 * gvfs
 * featherpad
+* chezmoi
+* git
