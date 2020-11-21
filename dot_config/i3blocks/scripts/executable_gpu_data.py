@@ -4,7 +4,9 @@ import mouse
 from processor import ProcessorData, processor_status
 from subprocess import run
 
-util_data = ProcessorData(args=('nvidia-smi', '--query-gpu=utilization.gpu', '--format=csv,noheader,nounits'),
+# ToDo nvidia-smi is reporting [N/A] utilization for the GeForce GTX 760.
+# util_data = ProcessorData(args=('nvidia-smi', '--query-gpu=utilization.gpu', '--format=csv,noheader,nounits'),
+util_data = ProcessorData(args=('echo', '0'),
                           thresholds=((' <span color="red">{}%</span>', 99.0),
                                       (' <span color="yellow">{}%</span>', 70.0),
                                       (' <span color="white">{}%</span>',)))
