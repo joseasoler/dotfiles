@@ -218,11 +218,7 @@ exec_always --no-startup-id dunst
 exec --no-startup-id dropbox
 
 # Set background with feh
-exec --no-startup-id ~/.config/autorandr/postswitch
-# feh --no-fehbg --bg-fill ~/.config/i3/nord_archlinux_by_bionicdna.png
-
-# Launch power manager. The tray icon must be enabled using xfce4-power-manager-settings for it to show up.
-exec_always --no-startup-id xfce4-power-manager
+exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/nord_archlinux_by_bionicdna.png
 
 ## Volume control
 
