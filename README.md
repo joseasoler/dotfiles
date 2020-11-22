@@ -10,7 +10,8 @@ This repository contains plugins and themes obtained from other sources. Each on
 
 * i3-gaps
 * ttf-inconsolata
-* nerd-fonts-inconsolata
+* ttf-dejavu
+* nerd-fonts-meslo
 * i3lock
 * perl-json-xs
 * perl-anyevent-i3
