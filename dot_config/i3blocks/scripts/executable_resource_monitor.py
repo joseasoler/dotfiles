@@ -119,7 +119,4 @@ if __name__ == "__main__":
         if len(d_data) > 1:
             output = output + ' ' + _to_pango(_temp_labels, _to_average_temp(d_data[1], temperatures), _temp_suffix)
 
-    # Network data
-
-    # print(args)
     print(output)
