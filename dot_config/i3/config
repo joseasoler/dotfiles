@@ -181,6 +181,7 @@ set $statuscmd i3blocks
 set $statussig SIGRTMIN+10
 
 bar {
+  font pango:Inconsolata 18
   status_command $statuscmd
   mode dock
   position bottom
