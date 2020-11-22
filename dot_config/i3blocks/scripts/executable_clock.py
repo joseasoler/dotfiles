@@ -12,4 +12,4 @@ if __name__ == "__main__":
     date_time = datetime.now()
     date = date_time.strftime('%d/%m')
     time = date_time.strftime('%H:%M:%S')
-    print(' <span color="white">{}</span>  <span color="white">{}</span>'.format(date, time))
+    print(' <span color="white">{}</span>  <span color="white">{}</span>'.format(date, time))
