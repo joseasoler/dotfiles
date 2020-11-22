@@ -76,9 +76,9 @@ def _to_average_temp(name, temperature_map):
         temps[2] += critical
 
     size = float(len(temperature_map[name]))
-    temps[0] /= size
-    temps[1] /= size
-    temps[2] /= size
+    temps[0] = round(temps[0] / size, 2)
+    temps[1] = round(temps[1] / size, 2)
+    temps[2] = round(temps[2] / size, 2)
 
     return temps
 
