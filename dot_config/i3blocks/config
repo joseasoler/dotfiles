@@ -2,32 +2,17 @@
 
 # Global properties
 separator=true
-separator_block_width=20
+separator_block_width=30
 
 [pacman-updates]
 command=~/.config/i3blocks/scripts/pacman_updates.py
 interval=3600
 markup=pango
 
-[cpu_data]
+[resource_monitor]
 # ToDo set to the Zen 3 temperature sensor when the 5.10 kernel is released.
-command=~/.config/i3blocks/scripts/cpu_data.py k10temp
+command=~/.config/i3blocks/scripts/resource_monitor.py -c k10temp -r jc42 -d /@nvme /home/jose/data
 interval=15
-markup=pango
-
-[gpu_data]
-command=~/.config/i3blocks/scripts/gpu_data.py
-interval=15
-markup=pango
-
-[ram_usage]
-command=~/.config/i3blocks/scripts/ram_usage.py
-interval=15
-markup=pango
-
-[filesystem_data]
-command=~/.config/i3blocks/scripts/filesystem_data.py
-interval=60
 markup=pango
 
 [volume]

@@ -1,0 +1,125 @@
+#!/usr/bin/env python3
+
+import argparse
+import mouse
+import psutil
+from shutil import disk_usage
+from subprocess import run
+
+_default_temperature = (0.0, 50.0, 70.0)
+""" Temperatures used when a sensor cannot be found or when one of its values are invalid. """
+
+_separator = '<span color="grey"> | </span>'
+
+_colors = ('white', 'yellow', 'orange')
+""" Colors used for regular, high and critical values. """
+_temp_labels = ('', '', '')
+""" Labels used for regular, high and critical temperatures. """
+
+_usage_suffix = '%'
+""" Suffix for usage values measured in percentages. """
+_temp_suffix = '°C'
+""" Suffix for temperatures measured in Celsius. """
+
+_usage_high = 70.0
+""" Usage high threshold. """
+_usage_critical = 90.0
+""" Usage critical threshold. """
+
+_cpu_usage_label = ''
+""" Label for CPU usage. """
+
+_ram_usage_label = ''
+""" Label for RAM usage. """
+
+_disk_usage_label = ''
+""" Label for disk usage. """
+
+
+def _to_pango(label, threshold_list, suffix):
+    """
+    Formats a value in pango.
+    :param label: String with the label, or a list containing the label for regular, high and critical.
+    :param threshold_list: List containing the current value, the high threshold and the critical threshold.
+    :param suffix: Suffix to add after the value.
+    :return: string containing the value formatted in pango.
+    """
+    index = 0
+    if threshold_list[0] > threshold_list[2]:
+        index = 2
+    elif threshold_list[0] > threshold_list[1]:
+        index = 1
+
+    lbl = label if isinstance(label, str) else label[index]
+    return '{} <span color="{}">{}{}</span>'.format(lbl, _colors[index], threshold_list[0], suffix)
+
+
+def _to_average_temp(name, temperature_map):
+    """
+    Converts the list of temperatures associated to a label to a list of average temperatures.
+    If the sensor does not exist, it will return _default_temperature. If the high or critical temperature thresholds
+    are invalid, it will use the values from _default_temperature instead.
+    :param name: Name of the sensor to check.
+    :param temperature_map: Dictionary of temperatures, as returned by psutil.sensors_temperatures
+    :return: List containing the current, high and critical temperatures of the label.
+    """
+    if name not in temperature_map:
+        return _default_temperature
+
+    temps = [0.0, 0.0, 0.0]
+    for temp in temperature_map[name]:
+        current = temp.current if temp.current is not None and temp.current > -50.0 else _default_temperature[0]
+        high = temp.high if temp.high is not None and temp.high > 0.0 else _default_temperature[1]
+        critical = temp.critical if temp.critical is not None and temp.critical > 0.0 else _default_temperature[2]
+        temps[0] += current
+        temps[1] += high
+        temps[2] += critical
+
+    size = float(len(temperature_map[name]))
+    temps[0] /= size
+    temps[1] /= size
+    temps[2] /= size
+
+    return temps
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-c", "--cpu", type=str, required=True, help="CPU sensor label")
+    parser.add_argument("-r", "--ram", type=str, required=True, help="RAM sensor label")
+    parser.add_argument("-d", "--disk", type=str, required=True, nargs='+',
+                        help="List of paths to a mounted disk and, optionally, @ and then a sensor label")
+    args = parser.parse_args()
+
+    if mouse.button() == mouse.BUTTON_LEFT:
+        run(['alacritty', '-e', 'bpytop', '-s'])
+
+    temperatures = psutil.sensors_temperatures()
+
+    # CPU data
+    cpu_usage = float(psutil.cpu_percent(interval=1.0, percpu=False))
+    output = _to_pango(_cpu_usage_label, (cpu_usage, _usage_high, _usage_critical), _usage_suffix)
+    # ToDo Review with the data of the Zen 3 temperature sensor when the 5.10 kernel is released.
+    output = output + ' ' + _to_pango(_temp_labels, _to_average_temp(args.cpu, temperatures), _temp_suffix)
+
+    # GPU data ToDo
+
+    # RAM data
+    ram_usage = float(psutil.virtual_memory().percent)
+    output = output + _separator + _to_pango(_ram_usage_label, (ram_usage, _usage_high, _usage_critical), _usage_suffix)
+    output = output + ' ' + _to_pango(_temp_labels, _to_average_temp(args.ram, temperatures), _temp_suffix)
+
+    # Disk data
+    for d in args.disk:
+        d_data = d.split('@')
+        d_usage = disk_usage(d_data[0])
+        d_percent = round((100.0 * d_usage.used) / d_usage.total, 2)
+        output = output + _separator + _to_pango(_disk_usage_label, (d_percent, _usage_high, _usage_critical),
+                                                 _usage_suffix)
+        if len(d_data) > 1:
+            output = output + ' ' + _to_pango(_temp_labels, _to_average_temp(d_data[1], temperatures), _temp_suffix)
+
+    # Network data
+
+    # print(args)
+    print(output)
