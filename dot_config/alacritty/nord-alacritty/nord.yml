@@ -1,7 +1,13 @@
-# Alacritty configuration file. See https://github.com/alacritty/alacritty
+# Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
+# Copyright (c) 2017-present Sven Greb <code@svengreb.de>
 
-# ToDo The next release of Alacritty will support configuration file imports. After it is released, the color scheme
-# should be imported from the nord-alacritty folder but for now use a copy.
+# Project:    Nord Alacritty
+# Version:    0.1.0
+# Repository: https://github.com/arcticicestudio/nord-alacritty
+# License:    MIT
+# References:
+#   https://github.com/alacritty/alacritty
+
 colors:
   primary:
     background: '#2e3440'
@@ -50,16 +56,3 @@ colors:
     magenta: '#8c738c'
     cyan: '#6d96a5'
     white: '#aeb3bb'
-
-scrolling:
-
-  # Maximum number of lines in the scrollback buffer.
-  history: 20000
-
-  # Scrolling distance multiplier.
-  multiplier: 5
-
-font:
-  normal:
-    family: Inconsolata
-  size: 16.0
