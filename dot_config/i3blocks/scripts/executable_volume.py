@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
 import mouse
+import nord
 from subprocess import run, PIPE
 
 volume_scroll_step = 1
+icons = ('', '', '',)
 
 if __name__ == "__main__":
     mouse_button = mouse.button()
@@ -19,9 +21,6 @@ if __name__ == "__main__":
         print('婢')
     else:
         volume = float(volume[:-1])
-        icon = ''
-        if volume > 66.6666:
-            icon = ''
-        elif volume > 33.3333:
-            icon = ''
-        print('{} <span color="white">{}%</span>'.format(icon, volume))
+        icon = icons[int((len(icons) * volume) / 100.0)]
+        color = nord.AURORA[int((len(nord.AURORA) * volume) / 100.0)]
+        print('{} <span color="{}">{}%</span>'.format(icon, color, volume))

@@ -2,6 +2,7 @@
 
 import argparse
 import mouse
+import nord
 import psutil
 from shutil import disk_usage
 from subprocess import run
@@ -11,17 +12,15 @@ _default_temperature = (0.0, 50.0, 70.0)
 
 _separator = '<span color="grey"> | </span>'
 
-_colors = ('white', 'yellow', 'orange')
-""" Colors used for regular, high and critical values. """
-_temp_labels = ('', '', '')
-""" Labels used for regular, high and critical temperatures. """
+_temp_labels = ('', '', '', '', '')
+""" Labels used for regular, (between regular and high), high, (between high and critical) and critical temps. """
 
 _usage_suffix = '%'
 """ Suffix for usage values measured in percentages. """
 _temp_suffix = '°C'
 """ Suffix for temperatures measured in Celsius. """
 
-_usage_high = 70.0
+_usage_high = 75.0
 """ Usage high threshold. """
 _usage_critical = 90.0
 """ Usage critical threshold. """
@@ -46,12 +45,16 @@ def _to_pango(label, threshold_list, suffix):
     """
     index = 0
     if threshold_list[0] > threshold_list[2]:
-        index = 2
+        index = 4
+    elif threshold_list[0] > ((threshold_list[2] + threshold_list[1]) / 2.0):
+        index = 3
     elif threshold_list[0] > threshold_list[1]:
+        index = 2
+    elif threshold_list[0] > (threshold_list[1] / 2.0):
         index = 1
 
     lbl = label if isinstance(label, str) else label[index]
-    return '{} <span color="{}">{}{}</span>'.format(lbl, _colors[index], threshold_list[0], suffix)
+    return '{} <span color="{}">{}{}</span>'.format(lbl, nord.AURORA[index], threshold_list[0], suffix)
 
 
 def _to_average_temp(name, temperature_map):
