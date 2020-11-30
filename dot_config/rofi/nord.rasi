@@ -28,7 +28,7 @@
     padding: 0px;
     spacing: 0px;
     text-color: @nord4;
-    font: "Inconsolata 22";
+    font: "Inconsolata 28";
 }
 #window {
     location: north;
