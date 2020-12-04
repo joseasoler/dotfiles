@@ -85,3 +85,5 @@ This repository contains plugins and themes obtained from other sources. Each on
 * featherpad
 * chezmoi
 * git
+* yay
+* firefox
