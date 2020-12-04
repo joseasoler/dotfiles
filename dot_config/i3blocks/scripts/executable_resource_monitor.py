@@ -20,9 +20,9 @@ _usage_suffix = '%'
 _temp_suffix = '°C'
 """ Suffix for temperatures measured in Celsius. """
 
-_usage_high = 75.0
+_usage_high = 80.0
 """ Usage high threshold. """
-_usage_critical = 90.0
+_usage_critical = 96.0
 """ Usage critical threshold. """
 
 _cpu_usage_label = ''
