@@ -87,3 +87,4 @@ This repository contains plugins and themes obtained from other sources. Each on
 * git
 * yay
 * firefox
+* diff-so-fancy

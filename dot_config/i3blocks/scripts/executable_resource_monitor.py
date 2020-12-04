@@ -35,6 +35,11 @@ _disk_usage_label = ''
 """ Label for disk usage. """
 
 
+def _round(value):
+    """ round redefinition for using the same format consistently. """
+    return round(value, 1)
+
+
 def _to_pango(label, threshold_list, suffix):
     """
     Formats a value in pango.
@@ -79,9 +84,9 @@ def _to_average_temp(name, temperature_map):
         temps[2] += critical
 
     size = float(len(temperature_map[name]))
-    temps[0] = round(temps[0] / size, 2)
-    temps[1] = round(temps[1] / size, 2)
-    temps[2] = round(temps[2] / size, 2)
+    temps[0] = _round(temps[0] / size)
+    temps[1] = _round(temps[1] / size)
+    temps[2] = _round(temps[2] / size)
 
     return temps
 
@@ -116,7 +121,7 @@ if __name__ == "__main__":
     for d in args.disk:
         d_data = d.split('@')
         d_usage = disk_usage(d_data[0])
-        d_percent = round((100.0 * d_usage.used) / d_usage.total, 2)
+        d_percent = _round((100.0 * d_usage.used) / d_usage.total)
         output = output + _separator + _to_pango(_disk_usage_label, (d_percent, _usage_high, _usage_critical),
                                                  _usage_suffix)
         if len(d_data) > 1:
