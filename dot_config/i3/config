@@ -162,6 +162,7 @@ bindsym $mod+r mode "resize"
 
 # Capture screen with flameshot
 bindsym Print exec flameshot gui
+bindsym Shift+Print exec flameshot full -c
 
 # Media keys with playerctl.
 bindsym XF86AudioPlay exec playerctl play-pause
