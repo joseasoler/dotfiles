@@ -88,3 +88,4 @@ This repository contains plugins and themes obtained from other sources. Each on
 * yay
 * firefox
 * diff-so-fancy
+* gwe

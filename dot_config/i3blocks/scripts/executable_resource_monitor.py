@@ -5,7 +5,7 @@ import mouse
 import nord
 import psutil
 from shutil import disk_usage
-from subprocess import run
+from subprocess import run, PIPE
 
 _default_temperature = (0.0, 50.0, 70.0)
 """ Temperatures used when a sensor cannot be found or when one of its values are invalid. """
@@ -15,10 +15,17 @@ _separator = '<span color="grey"> | </span>'
 _temp_labels = ('', '', '', '', '')
 """ Labels used for regular, (between regular and high), high, (between high and critical) and critical temps. """
 
+_power_label = ''
+""" Label used for power draw values. """
+
 _usage_suffix = '%'
 """ Suffix for usage values measured in percentages. """
+
 _temp_suffix = '°C'
 """ Suffix for temperatures measured in Celsius. """
+
+_power_suffix = ' W'
+""" Suffix for power draw values measured in Watts. """
 
 _usage_high = 80.0
 """ Usage high threshold. """
@@ -27,6 +34,9 @@ _usage_critical = 96.0
 
 _cpu_usage_label = ''
 """ Label for CPU usage. """
+
+_gpu_usage_label = 'GPU'
+""" Label for GPU usage. """
 
 _ram_usage_label = ''
 """ Label for RAM usage. """
@@ -59,7 +69,7 @@ def _to_pango(label, threshold_list, suffix):
         index = 1
 
     lbl = label if isinstance(label, str) else label[index]
-    return '{} <span color="{}">{}{}</span>'.format(lbl, nord.AURORA[index], threshold_list[0], suffix)
+    return '{} <span color="{}">{}{}</span>'.format(lbl, nord.AURORA[index], _round(threshold_list[0]), suffix)
 
 
 def _to_average_temp(name, temperature_map):
@@ -101,6 +111,8 @@ if __name__ == "__main__":
 
     if mouse.button() == mouse.BUTTON_LEFT:
         run(['alacritty', '-e', 'bpytop', '-s'])
+    elif mouse.button() == mouse.BUTTON_RIGHT:
+        run(['gwe', ])
 
     temperatures = psutil.sensors_temperatures()
 
@@ -110,7 +122,14 @@ if __name__ == "__main__":
     # ToDo Review with the data of the Zen 3 temperature sensor when the 5.10 kernel is released.
     output = output + ' ' + _to_pango(_temp_labels, _to_average_temp(args.cpu, temperatures), _temp_suffix)
 
-    # GPU data ToDo
+    # GPU data
+    gpu_data = run(('nvidia-smi', '--query-gpu=utilization.gpu,temperature.gpu,power.draw,power.limit',
+                    '--format=csv,noheader,nounits'), check=False, stdout=PIPE).stdout.decode('utf-8')
+    gpu_usage, gpu_temp, gpu_power, gpu_power_limit = [float(value) for value in gpu_data.replace('\n', '').split(', ')]
+
+    output = output + _separator + _to_pango(_gpu_usage_label, (gpu_usage, _usage_high, _usage_critical), _usage_suffix)
+    output = output + ' ' + _to_pango(_temp_labels, (gpu_temp, 70, 80), _temp_suffix)
+    output = output + ' ' + _to_pango(_power_label, (gpu_power, gpu_power_limit * 0.9, gpu_power_limit), _power_suffix)
 
     # RAM data
     ram_usage = float(psutil.virtual_memory().percent)
