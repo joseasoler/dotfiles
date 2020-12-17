@@ -13,4 +13,5 @@ if __name__ == "__main__":
     date_time = datetime.now()
     date = date_time.strftime('%d/%m')
     time = date_time.strftime('%H:%M:%S')
-    print(' <span color="{}">{}</span>  <span color="{}">{}</span>'.format(nord.SNOW[2], date, nord.SNOW[2], time))
+    print(' <span color="{}">{}</span>  <span color="{}">{}</span>'.
+          format(nord.SNOW[2], date, nord.SNOW[2], time))
