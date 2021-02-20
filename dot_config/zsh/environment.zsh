@@ -8,8 +8,8 @@ export GIT_EDITOR='nano'
 # i3-volume.
 export NO_NOTIFY_COLOR=''
 
-# Style
-export QT_STYLE_OVERRIDE=kvantum # Force Qt to use kvantum for styles.
+# Force Qt to use kvantum for styles.
+export QT_STYLE_OVERRIDE=kvantum
 
 # Development environment variables.
-export CPM_SOURCE_CACHE='$HOME/data/cpm'
+export CPM_SOURCE_CACHE='/home/jose/data/cpm'
