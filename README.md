@@ -1,91 +1,32 @@
 # Dotfiles
 
-Managed using [chezmoi](https://github.com/twpayne/chezmoi).
+Dotfiles for [Archlinux](https://archlinux.org/), managed using [chezmoi](https://github.com/twpayne/chezmoi)
 
-This repository contains plugins and themes obtained from other sources. Each one of these are stored in their own folder and contain a LICENSE or LICENSE.md file that is applied to all files contained in the folder and its subfolders. Other files may contain the license info in their headers.
+This repository contains plugins and themes obtained from other sources. Each one of these are stored in their own folder and contain a LICENSE or LICENSE.md file that is applied to all files contained in the folder and its subfolders. Other files may contain the license info in their headers. For anything else, check [UNLICENSE](UNLICENSE).
 
-## Package requirements (Arch)
+## Installation
 
-### i3
+```bash
+sudo pacman -S git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
+rm -r yay
+yay -S sddm i3-gaps ttf-inconsolata ttf-dejavu nerd-fonts-meslo i3lock perl-json-xs perl-anyevent-i3 dunst i3-volume rofi flameshot feh playerctl xcb-util-xrm cava arandr sox pavucontrol i3blocks pacman-contrib acpi lm_sensors gsimplecal lxappearance kvantum-qt5 xorg-xrdb spicetify-cli kvantum-theme-nordic-git nordic-theme-git papirus-icon-theme zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k ruby-colorls man-db man-pages neofetch xdg-utils peco kolourpaint bpytop ttf-ubraille network-manager-applet thunar tumbler gvfs featherpad firefox diff-so-fancy gwe alacritty pulseaudio chezmoi spotify
+sudo systemctl enable sddm.service
+chezmoi init --apply --verbose git@github.com:joseasoler/dotfiles.git
+sudo reboot
+```
 
-* i3-gaps
-* ttf-inconsolata
-* ttf-dejavu
-* nerd-fonts-meslo
-* i3lock
-* perl-json-xs
-* perl-anyevent-i3
-* dunst
-* i3-volume
-* rofi
-* flameshot
-* feh
-* playerctl
-* xcb-util-xrm
-* cava
-* arandr
-* sox
-* nm-applet
+### Post-installation
 
-### Status bar
+#### Spotify
 
-* pavucontrol
-* i3blocks
-* pacman-contrib (pacman updates)
-* acpi (battery)
-* lm_sensors (gpu)
-* gsimplecal
-
-### Login
-
-* sddm
-
-### Theme
-
-* lxappearance
-* kvantum-qt5
-* xorg-xrdb
-* spicetify-cli
-
-### Nordic theme
-
-* kvantum-theme-nordic-git
-* nordic-theme-git
-
-### Rofi
-
-* rofi
-* papirus-icon-theme
-
-### Zsh
-
-* zsh
-* zsh-autosuggestions
-* zsh-completions
-* zsh-syntax-highlighting
-* zsh-theme-powerlevel10k
-* awesome-terminal-fonts
-* ruby-colorls
-* man-db
-* man-pages
-* neofetch
-* xdg-utils
-* peco
-* nano
-
-### Other
-
-* kolourpaint
-* bpytop
-* ttf-ubraille
-* nm-manager-applet
-* thunar
-* tumbler
-* gvfs
-* featherpad
-* chezmoi
-* git
-* yay
-* firefox
-* diff-so-fancy
-* gwe
+```bash
+# Launch spotify at least once
+spotify
+sudo chmod a+wr /opt/spotify
+sudo chmod a+wr /opt/spotify/Apps -R
+spicetify backup apply enable-devtool
+```
