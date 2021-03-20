@@ -110,7 +110,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if mouse.button() == mouse.BUTTON_LEFT:
-        run(['alacritty', '-e', 'bpytop', '-s'])
+        run(['kitty', 'bpytop'])
     elif mouse.button() == mouse.BUTTON_RIGHT:
         run(['gwe', ])
 
