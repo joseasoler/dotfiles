@@ -21,6 +21,12 @@ sudo reboot
 
 ### Post-installation
 
+#### Keyboard layout
+
+```bash
+sudo localectl --no-convert set-x11-keymap es
+```
+
 #### Spotify
 
 ```bash
