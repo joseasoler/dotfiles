@@ -10,6 +10,9 @@ alias lx='ll --sort extension' # Sort by extension.
 # Use bat instead of cat
 alias cat='bat --theme Nord'
 
+# Use ripgrep (rg) instead of grep.
+alias grep='rg'
+
 # Other aliases.
 alias open='xdg-open' # Open a file or URL in the preferred application.
 alias top='bpytop'
