@@ -13,7 +13,7 @@ cd yay
 makepkg -si
 cd ..
 rm -r yay
-yay -S sddm i3-gaps ttf-inconsolata ttf-dejavu nerd-fonts-meslo i3lock perl-json-xs perl-anyevent-i3 dunst i3-volume rofi flameshot feh playerctl xcb-util-xrm cava arandr sox pavucontrol i3blocks pacman-contrib acpi lm_sensors gsimplecal lxappearance kvantum-qt5 xorg-xrdb spicetify-cli kvantum-theme-nordic-git nordic-theme-git papirus-icon-theme zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k exa man-db man-pages neofetch xdg-utils peco kolourpaint bpytop ttf-ubraille network-manager-applet thunar tumbler gvfs featherpad firefox diff-so-fancy gwe kitty pulseaudio chezmoi spotify bat fd ripgrep
+yay -S sddm i3-gaps ttf-inconsolata ttf-dejavu nerd-fonts-meslo i3lock perl-json-xs perl-anyevent-i3 dunst i3-volume rofi flameshot feh playerctl xcb-util-xrm cava arandr sox pavucontrol i3blocks pacman-contrib acpi lm_sensors gsimplecal lxappearance kvantum-qt5 xorg-xrdb spicetify-cli kvantum-theme-nordic-git nordic-theme-git papirus-icon-theme zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k exa man-db man-pages neofetch xdg-utils peco kolourpaint bpytop ttf-ubraille network-manager-applet thunar tumbler gvfs featherpad firefox diff-so-fancy gwe kitty pulseaudio chezmoi spotify bat fd ripgrep tokei
 sudo systemctl enable sddm.service
 chezmoi init --apply --verbose git@github.com:joseasoler/dotfiles.git
 sudo reboot
