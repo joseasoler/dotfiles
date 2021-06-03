@@ -7,6 +7,9 @@ alias lk='ll --sort size' # Sort by file size, largest last.
 alias lt='ll --sort date' # Sort by modification time, newest last.
 alias lx='ll --sort extension' # Sort by extension.
 
+# Use bat instead of cat
+alias cat='bat --theme Nord'
+
 # Other aliases.
 alias open='xdg-open' # Open a file or URL in the preferred application.
 alias top='bpytop'
