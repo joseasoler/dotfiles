@@ -35,7 +35,7 @@ rm -r paru
 ### Installation
 
 ```bash
-paru -S sddm i3-gaps ttf-inconsolata ttf-dejavu nerd-fonts-meslo i3lock dunst i3-volume rofi flameshot feh playerctl xcb-util-xrm cava arandr sox pavucontrol i3blocks pacman-contrib acpi lm_sensors gsimplecal lxappearance kvantum-qt5 xorg-xrdb spicetify-cli kvantum-theme-nordic-git nordic-theme-git papirus-icon-theme zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k exa man-db man-pages neofetch xdg-utils peco-bin kolourpaint bpytop ttf-ubraille network-manager-applet thunar tumbler gvfs featherpad firefox gwe kitty pulseaudio chezmoi spotify bat fd ripgrep tokei
+paru -S sddm i3-gaps ttf-inconsolata ttf-dejavu nerd-fonts-meslo i3lock dunst i3-volume rofi flameshot feh playerctl xcb-util-xrm cava arandr sox pavucontrol i3blocks pacman-contrib acpi lm_sensors gsimplecal lxappearance kvantum-qt5 xorg-xrdb spicetify-cli kvantum-theme-nordic-git nordic-theme-git papirus-icon-theme zsh zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k exa man-db man-pages neofetch xdg-utils fzf kolourpaint bpytop ttf-ubraille network-manager-applet thunar tumbler gvfs featherpad firefox gwe kitty pulseaudio chezmoi spotify bat fd ripgrep tokei
 chsh -s /usr/bin/zsh
 sudo systemctl enable sddm.service
 chezmoi init --apply --verbose git@github.com:joseasoler/dotfiles.git

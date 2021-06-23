@@ -12,10 +12,11 @@ source ~/.config/zsh/environment.zsh
 source ~/.config/zsh/history.zsh
 
 # Plugins
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh
-source ~/.config/zsh/plugins/peco-history/zsh-peco-history.zsh
 
 # zsh does not read inputrc so hotkeys must be added manually. Check Zsh on Archwiki for details.
 # create a zkbd compatible hash;
