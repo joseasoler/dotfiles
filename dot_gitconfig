@@ -1,0 +1,13 @@
+[init]
+	defaultBranch = main
+[rebase]
+	autoStash = true
+[user]
+	email = jose.angel.soler.ortiz@gmail.com
+	name = José Ángel Soler Ortiz
+[pull]
+	rebase = true
+[merge]
+	ff = false
+[core]
+	longpaths = true

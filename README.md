@@ -44,6 +44,10 @@ sudo reboot
 
 ## Post-installation
 
+### .gitconfig
+
+Set the email and name values correctly!
+
 ### Keyboard layout
 
 ```bash
