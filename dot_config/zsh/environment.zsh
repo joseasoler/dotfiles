@@ -10,6 +10,3 @@ export NO_NOTIFY_COLOR=''
 
 # Force Qt to use kvantum for styles.
 export QT_STYLE_OVERRIDE=kvantum
-
-# Development environment variables.
-export CPM_SOURCE_CACHE='/home/jose/data/cpm'
