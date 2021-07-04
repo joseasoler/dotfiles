@@ -10,7 +10,7 @@ This section contains instructions for installing the dependencies of these dotf
 
 ### makepkg configuration
 
-Prepare makepkg before building any packages from the AUR:
+Configure [makepkg](https://wiki.archlinux.org/title/makepkg) for optimizing compile times and building optimized binaries before building any packages from the AUR:
 
 ```bash
 sudo nano /etc/makepkg.conf
@@ -21,7 +21,7 @@ Set MAKEFLAGS for [improving compile times](https://wiki.archlinux.org/title/mak
 
 ### paru
 
-Paru is the [pacman wrapper](https://wiki.archlinux.org/title/AUR_helpers#Pacman_wrappers) used by these dotfiles.
+[paru](https://github.com/Morganamilo/paru) is the [pacman wrapper](https://wiki.archlinux.org/title/AUR_helpers#Pacman_wrappers) used by these dotfiles.
 
 ```bash
 sudo pacman -S git rust
@@ -46,7 +46,7 @@ sudo reboot
 
 ### .gitconfig
 
-Set the email and name values correctly!
+Remember to set the email and name values correctly.
 
 ### Keyboard layout
 
