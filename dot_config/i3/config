@@ -217,6 +217,9 @@ exec --no-startup-id dropbox
 # Set background with feh
 exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/nord_archlinux_by_bionicdna.png
 
+# Start GreenWithEnvy
+exec --no-startup-id gwe
+
 ## Volume control
 
 # Path to volume control, without trailing slash

@@ -15,7 +15,7 @@ alias grep='rg'
 
 # Other aliases.
 alias open='xdg-open' # Open a file or URL in the preferred application.
-alias top='bpytop'
+alias top='btop'
 
 # Common mistypes.
 alias cd..='cd ..'
