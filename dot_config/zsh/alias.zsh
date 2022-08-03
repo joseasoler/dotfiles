@@ -16,6 +16,7 @@ alias grep='rg'
 # Other aliases.
 alias open='xdg-open' # Open a file or URL in the preferred application.
 alias top='btop'
+alias icat="kitty +kitten icat"
 
 # Common mistypes.
 alias cd..='cd ..'
