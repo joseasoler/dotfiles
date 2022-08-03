@@ -19,3 +19,5 @@ alias top='btop'
 
 # Common mistypes.
 alias cd..='cd ..'
+
+map ctrl+shift+u no_op
