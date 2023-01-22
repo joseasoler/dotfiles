@@ -16,7 +16,14 @@ alias grep='rg'
 # Other aliases.
 alias open='xdg-open' # Open a file or URL in the preferred application.
 alias top='btop'
-alias icat="kitty +kitten icat"
+alias icat='kitty +kitten icat'
 
 # Common mistypes.
 alias cd..='cd ..'
+
+# RimWorld mod development aliases.
+alias modsrim='cd /home/joseasoler/.steam/steam/steamapps/common/RimWorld/Mods'
+alias workshoprim='cd /home/joseasoler/.steam/steam/steamapps/workshop/content/294100'
+
+# Valheim mod development aliases.
+alias valhmods='cd /home/joseasoler/.steam/steam/steamapps/common/Valheim/'
