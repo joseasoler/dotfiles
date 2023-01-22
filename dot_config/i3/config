@@ -233,5 +233,18 @@ bindsym XF86AudioRaiseVolume exec $volumepath -np -t $statuscmd -u $statussig -P
 bindsym XF86AudioLowerVolume exec $volumepath -np -t $statuscmd -u $statussig -P down $volumestep
 bindsym XF86AudioMute        exec $volumepath -np -t $statuscmd -u $statussig -P mute
 
+# Set dual monitor configuration.
+exec xrandr --output HDMI-0 --mode 2560x1440 --pos 2560x0 --rotate right --output DP-0 --primary --mode 2560x1440 --pos 0x375 --rotate normal --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off
+workspace 1 output DP-0
+workspace 2 output DP-0
+workspace 3 output DP-0
+workspace 4 output DP-0
+workspace 5 output DP-0
+workspace 6 output DP-0
+workspace 7 output DP-0
+workspace 8 output DP-0
+workspace 9 output DP-0
+workspace 10 output HDMI-0
+
 # Play a short beep indicating that the configuration is reloaded. Also starts the pulseaudio daemon.
 exec_always --no-startup-id play -nq -t pulseaudio synth 0.05 sine 300
