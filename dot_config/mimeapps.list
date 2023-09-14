@@ -12,3 +12,12 @@ text/xml=firefox.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
 inode/directory=thunar.desktop
+text/x-csharp=featherpad.desktop
+
+[Added Associations]
+image/png=org.kde.kolourpaint.desktop;
+application/x-shellscript=featherpad.desktop;
+application/xml=featherpad.desktop;
+image/jpeg=org.kde.kolourpaint.desktop;
+text/csv=libreoffice-calc.desktop;featherpad.desktop;
+text/x-csharp=featherpad.desktop;

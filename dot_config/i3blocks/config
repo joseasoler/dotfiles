@@ -10,7 +10,6 @@ interval=3600
 markup=pango
 
 [resource_monitor]
-# ToDo set to the Zen 3 temperature sensor when the 5.10 kernel is released.
 command=~/.config/i3blocks/scripts/resource_monitor.py -c k10temp -r jc42 -d /@nvme /home/joseasoler/data
 interval=15
 markup=pango

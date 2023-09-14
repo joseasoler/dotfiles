@@ -24,21 +24,22 @@ _usage_suffix = '%'
 _temp_suffix = '°C'
 """ Suffix for temperatures measured in Celsius. """
 
-_power_suffix = ' W'
+_power_suffix = 'W'
 """ Suffix for power draw values measured in Watts. """
 
 _usage_high = 80.0
 """ Usage high threshold. """
+
 _usage_critical = 96.0
 """ Usage critical threshold. """
 
-_cpu_usage_label = ''
+_cpu_usage_label = '󰘚'
 """ Label for CPU usage. """
 
-_gpu_usage_label = 'GPU'
+_gpu_usage_label = '󰾲'
 """ Label for GPU usage. """
 
-_ram_usage_label = ''
+_ram_usage_label = '󰍛'
 """ Label for RAM usage. """
 
 _disk_usage_label = ''

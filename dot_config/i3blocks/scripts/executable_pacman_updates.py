@@ -23,5 +23,5 @@ if __name__ == "__main__":
     package_colour, package_number = _get_package_data([['checkupdates'], ['paru', '-Qua']], 25)
     orphan_colour, orphan_number = _get_package_data([['pacman', '-Qtdq'], ], 10)
 
-    print(' <span color="{}">{}</span>  <span color="{}">{}</span>'.format(package_colour, package_number,
+    print('󱧕 <span color="{}">{}</span> 󱧖 <span color="{}">{}</span>'.format(package_colour, package_number,
                                                                              orphan_colour, orphan_number))

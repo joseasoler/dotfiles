@@ -1,7 +1,7 @@
 # Aliases
 
-# Use exa instead of ls. Sort directories first. Show git status. Show dotfiles. Use ISO for timestamps.
-alias ls='exa --icons --group-directories-first --git -a --time-style long-iso'
+# Use eza instead of ls. Sort directories first. Show git status. Show dotfiles. Use ISO for timestamps.
+alias ls='eza --icons --group-directories-first --git -a --time-style long-iso'
 alias ll='ls -l' # Display extended file metadata as a table.
 alias lk='ll --sort size' # Sort by file size, largest last.
 alias lt='ll --sort date' # Sort by modification time, newest last.
