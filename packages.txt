@@ -49,7 +49,7 @@ ttf-ubraille
 tumbler
 xcb-util-xrm
 xdg-utils
-xorg-xrdbq
+xorg-xrdb
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
