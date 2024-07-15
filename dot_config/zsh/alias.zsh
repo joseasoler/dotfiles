@@ -13,6 +13,9 @@ alias cat='bat --theme Nord'
 # Replace du with ncdu.
 alias du='ncdu --color dark'
 
+# Generic alias for the "fetch" application used in the dotfiles.
+alias fetch='fastfetch'
+
 # Replace grep with ripgrep (rg).
 alias grep='rg'
 

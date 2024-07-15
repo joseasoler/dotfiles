@@ -5,6 +5,7 @@ btop
 chezmoi
 dunst
 eza
+fastfetch
 fd
 featherpad
 feh
@@ -25,7 +26,6 @@ lxappearance
 man-db
 man-pages
 ncdu
-neofetch
 network-manager-applet
 nordic-theme-git
 pacman-contrib
