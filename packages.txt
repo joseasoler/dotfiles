@@ -26,7 +26,6 @@ man-db
 man-pages
 ncdu
 neofetch
-nerd-fonts-meta
 network-manager-applet
 nordic-theme-git
 pacman-contrib
@@ -44,11 +43,13 @@ thunar
 tokei
 ttf-dejavu
 ttf-inconsolata
+ttf-inconsolata-nerd
+ttf-meslo-nerd
 ttf-ubraille
 tumbler
 xcb-util-xrm
 xdg-utils
-xorg-xrdb
+xorg-xrdbq
 zsh
 zsh-autosuggestions
 zsh-syntax-highlighting
