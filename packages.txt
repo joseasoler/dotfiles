@@ -37,7 +37,6 @@ python-psutil
 ripgrep
 rofi
 sddm
-sox
 spotify
 thunar
 tokei
