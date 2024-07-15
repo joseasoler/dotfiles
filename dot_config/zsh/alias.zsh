@@ -1,29 +1,27 @@
 # Aliases
 
-# Use eza instead of ls. Sort directories first. Show git status. Show dotfiles. Use ISO for timestamps.
+# Replace ls with eza. Sort directories first. Show git status. Show dotfiles. Use ISO for timestamps.
 alias ls='eza --icons --group-directories-first --git -a --time-style long-iso'
-alias ll='ls -l' # Display extended file metadata as a table.
-alias lk='ll --sort size' # Sort by file size, largest last.
-alias lt='ll --sort date' # Sort by modification time, newest last.
-alias lx='ll --sort extension' # Sort by extension.
+alias ll='eza -l' # Display extended file metadata as a table.
+alias lk='eza -l --sort size' # Sort by file size, largest last.
+alias lt='eza -l --sort date' # Sort by modification time, newest last.
+alias lx='eza -l --sort extension' # Sort by extension.
 
-# Use bat instead of cat
+# Replace cat with bat.
 alias cat='bat --theme Nord'
 
-# Use ripgrep (rg) instead of grep.
+# Replace du with ncdu.
+alias du='ncdu --color dark'
+
+# Replace grep with ripgrep (rg).
 alias grep='rg'
 
-# Other aliases.
-alias open='xdg-open' # Open a file or URL in the preferred application.
+# Replace top with btop.
 alias top='btop'
+
+# Other aliases.
 alias icat='kitty +kitten icat'
+alias open='xdg-open' # Open a file or URL in the preferred application.
 
 # Common mistypes.
 alias cd..='cd ..'
-
-# RimWorld mod development aliases.
-alias modsrim='cd /home/joseasoler/.steam/steam/steamapps/common/RimWorld/Mods'
-alias workshoprim='cd /home/joseasoler/.steam/steam/steamapps/workshop/content/294100'
-
-# Valheim mod development aliases.
-alias valhmods='cd /home/joseasoler/.steam/steam/steamapps/common/Valheim/'
