@@ -54,13 +54,3 @@ Remember to set the email and name values correctly.
 sudo localectl --no-convert set-x11-keymap es
 sudo reboot
 ```
-
-### Spotify
-
-```bash
-# Launch spotify at least once.
-spotify
-sudo chmod a+wr /opt/spotify
-sudo chmod a+wr /opt/spotify/Apps -R
-spicetify backup apply enable-devtool
-```
