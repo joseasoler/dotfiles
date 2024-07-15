@@ -42,7 +42,7 @@ _gpu_usage_label = '󰾲'
 _ram_usage_label = '󰍛'
 """ Label for RAM usage. """
 
-_disk_usage_label = ''
+_disk_usage_label = ' '
 """ Label for disk usage. """
 
 
