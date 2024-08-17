@@ -21,6 +21,7 @@ kitty
 kolourpaint
 kvantum-qt5
 kvantum-theme-nordic-git
+libreoffice-fresh
 lm_sensors
 lxappearance
 man-db
