@@ -9,6 +9,7 @@ fastfetch
 fd
 featherpad
 feh
+firefox
 flameshot
 fzf
 gvfs
@@ -19,6 +20,7 @@ i3lock
 kitty
 kolourpaint
 libreoffice-fresh
+libva-nvidia-driver
 lm_sensors
 lxappearance
 man-db
