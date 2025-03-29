@@ -205,9 +205,6 @@ bar {
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-# nm-applet is a desktop environment-independent system tray GUI for NetworkManager.
-exec --no-startup-id nm-applet
-
 # Enable notifications with dunst
 exec_always --no-startup-id dunst
 
@@ -216,9 +213,6 @@ exec --no-startup-id dropbox
 
 # Set background with feh
 exec --no-startup-id feh --no-fehbg --bg-fill ~/.config/i3/nord_archlinux_by_bionicdna.png
-
-# Start GreenWithEnvy
-exec --no-startup-id gwe
 
 ## Volume control
 

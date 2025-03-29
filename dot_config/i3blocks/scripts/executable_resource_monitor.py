@@ -112,8 +112,6 @@ if __name__ == "__main__":
 
     if mouse.button() == mouse.BUTTON_LEFT:
         run(['kitty', 'btop'])
-    elif mouse.button() == mouse.BUTTON_RIGHT:
-        run(['gwe', ])
 
     temperatures = psutil.sensors_temperatures()
 
