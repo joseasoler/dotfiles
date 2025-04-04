@@ -27,6 +27,7 @@ man-db
 man-pages
 ncdu
 nordic-theme-git
+noto-fonts-emoji
 nvidia-open
 nvidia-settings
 pacman-contrib

@@ -4,7 +4,7 @@ Dotfiles for [Archlinux](https://archlinux.org/), managed using [chezmoi](https:
 
 This repository contains plugins and themes obtained from other sources. Each one of these are stored in their own folder and contain a LICENSE or LICENSE.md file that is applied to all files contained in the folder and its subfolders. Other files may contain the license info in their headers. For anything else, check [UNLICENSE](UNLICENSE).
 
-These files assume an AMD CPU and a NVIDIA GPU.
+These files assume an AMD CPU and an NVIDIA GPU.
 
 ## Operative system installation
 
