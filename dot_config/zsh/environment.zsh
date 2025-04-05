@@ -10,3 +10,6 @@ export NO_NOTIFY_COLOR=''
 
 # Force Qt to use kvantum for styles.
 export QT_STYLE_OVERRIDE=kvantum
+
+# Development environment variables.
+export VCPKG_ROOT=${HOME}/dev/vcpkg
