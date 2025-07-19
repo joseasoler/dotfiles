@@ -9,6 +9,7 @@ fastfetch
 fd
 featherpad
 feh
+ffmpeg
 firefox
 flameshot
 fzf

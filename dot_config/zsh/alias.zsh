@@ -22,9 +22,14 @@ alias grep='rg'
 # Replace top with btop.
 alias top='btop'
 
-# Other aliases.
+# Display an image on the terminal.
 alias icat='kitty +kitten icat'
-alias open='xdg-open' # Open a file or URL in the preferred application.
+
+# Open a file or URL in the preferred application.
+alias open='xdg-open'
+
+# Convert flac to mp3 and copy them all to the parameter path.
+alias flac2mp3='fd -t f -e flac -x ffmpeg -i "{}" -qscale:a 0 "{.}.mp3" && fd -t f -e mp3 -x mv -n --debug "{.}.mp3"'
 
 # Common mistypes.
 alias cd..='cd ..'
