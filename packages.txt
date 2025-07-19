@@ -17,6 +17,7 @@ i3-gaps
 i3-volume
 i3blocks
 i3lock
+imagemagick
 kitty
 kolourpaint
 libreoffice-fresh
