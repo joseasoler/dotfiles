@@ -85,7 +85,7 @@ sudo systemctl enable –now systemd-timesyncd.service
 
 #### makepkg
 
-Configure [makepkg](https://wiki.archlinux.org/title/makepkg) to reduce compile times and optimize binaries. Flags to use are based on [ALPH flags](https://somegit.dev/ALHP/ALHP.GO/src/branch/main/flags.yaml). You should double check that the instructions below are up to date.
+Configure [makepkg](https://wiki.archlinux.org/title/makepkg) to reduce compile times and optimize binaries. Flags taken from [ALPH flags](https://somegit.dev/ALHP/ALHP.GO/src/branch/main/flags.yaml). Check that they are up to date.
 
 ```bash
 sudo nano /etc/makepkg.conf
@@ -110,7 +110,8 @@ RUSTFLAGS:
 #### git
 
 ```bash
-git config --global user.name 'Your Name And Surname'
+git config --global user.name 'Full Name'
+git config --global user.email "your.email@example.ex"
 git config --global init.defaultBranch main
 git config --global pull.rebase true
 git config --global rebase.autoStash true
@@ -118,7 +119,6 @@ git config --global merge.ff false
 git config --global core.commentChar '>'
 git config --global core.editor 'nano'
 git config --global color.ui true
-
 ```
 
 #### paru
@@ -143,13 +143,13 @@ sudo pacman -Syu pipewire lib32-pipewire
 #### Fonts
 
 ```bash
-sudo pacman -Syu noto-fonts noto-fonts-emoji
+sudo pacman -Syu noto-fonts noto-fonts-emoji ttf-noto-nerd
 ```
 
 #### KDE Plasma
 
 ```bash
-sudo pacman -Syu plasma-desktop kscreen breeze-gtk kde-gtk-config xdg-desktop-portal-kde plasma-nm plasma-pa gwenview qt6-imageformats kimageformats kcolorchooser dolphin spectacle kate markdownpart
+sudo pacman -Syu plasma-desktop kscreen breeze-gtk kde-gtk-config xdg-desktop-portal-kde plasma-nm plasma-pa gwenview qt6-imageformats kimageformats kcolorchooser dolphin spectacle kate markdownpart kitty
 ```
 
 * Launch KDE from TTY for now.
@@ -235,18 +235,15 @@ ssh-keygen -t ed25519 -C "your.email@example.ex"
 
 Upload your public key to your repo hosting.
 
-### ToDo review packages
-
-* konsole vs kitty
-
 ### Dotfiles installation
 
 Replace the URL with your repo if necessary.
 
 ```bash
-sudo pacman -Syu bat btop chezmoi eza fd ffmpeg ncdu ripgrep zsh zsh-autosuggestions zsh-syntax-highlighting
-paru -Syu zsh-theme-powerlevel10k
+sudo pacman -Syu bat less btop chezmoi eza fd ffmpeg ncdu ripgrep zsh zsh-autosuggestions zsh-syntax-highlighting starship fastfetch
 chsh -s /usr/bin/zsh
 chezmoi init --apply --verbose git@github.com:joseasoler/dotfiles.git
+git config --global pager.log 'bat -p -l gitlog'
+git config --global pager.diff 'bat'
 systemctl reboot
 ```

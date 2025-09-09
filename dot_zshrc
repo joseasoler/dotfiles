@@ -1,0 +1,21 @@
+# Configuration files.
+source ~/.config/zsh/alias.zsh
+source ~/.config/zsh/environment.zsh
+source ~/.config/zsh/history.zsh
+source ~/.config/zsh/keys.zsh
+source ~/.config/zsh/options.zsh
+
+# Plugins
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Reverse search.
+bindkey -e
+
+# Completion.
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select
+
+# Starship prompt
+eval "$(starship init zsh)"
