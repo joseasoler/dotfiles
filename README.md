@@ -76,12 +76,31 @@ grub-mkconfig -o /boot/grub/grub.cfg
 * Enable [time sync](https://wiki.archlinux.org/title/Systemd-timesyncd):
 
 ```bash
-sudo systemctl enable –now systemd-timesyncd.service
+sudo systemctl enable --now systemd-timesyncd.service
 ```
 
 #### Repositories
 
 * [Enable multilib](https://wiki.archlinux.org/title/Official_repositories#Enabling_multilib).
+
+#### Reflector
+
+```bash
+sudo pacman -Syu reflector
+sudo nano /etc/xdg/reflector/reflector.conf
+```
+
+Uncomment the country line and set it to:
+
+```bash
+--country ES,FR,DE,GB
+```
+
+Then enable the service:
+
+```bash
+sudo systemctl enable --now reflector.service
+```
 
 #### makepkg
 
