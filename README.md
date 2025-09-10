@@ -102,6 +102,15 @@ Then enable the service:
 sudo systemctl enable --now reflector.service
 ```
 
+#### DNS over HTTPS
+
+```bash
+sudo pacman -Syu dns-over-https
+sudo systemctl enable --now doh-client.service
+```
+
+Follow the [Arch Linux NetworkManager wiki page](https://wiki.archlinux.org/title/NetworkManager#Setting_custom_global_DNS_servers) instructions for setting a custom global DNS server pointing to localhost.
+
 #### makepkg
 
 Configure [makepkg](https://wiki.archlinux.org/title/makepkg) to reduce compile times and optimize binaries. Flags taken from [ALPH flags](https://somegit.dev/ALHP/ALHP.GO/src/branch/main/flags.yaml). Check that they are up to date.
@@ -196,7 +205,22 @@ Reboot and test. After logging in, set the SDDM theme to breeze.
 sudo pacman -Syu firefox
 ```
 
-* Set widget.use-xdg-desktop-portal.file-picker to 1 in about:config.
+In `about:config`:
+* Set widget.use-xdg-desktop-portal.file-picker to 1.
+* Set geo.enabled to false.
+* Set privacy.query_stripping.enabled and privacy.query_stripping.enabled.pbmode to true.
+
+In `about:preferences`:
+* Search for telemetry and disable all options.
+* Search > Disable Show search suggestions.
+* Privacy and Security > Enhanced Tracking Protection > Strict.
+* Privacy and Security > Website Privacy Preferences > Tell websites not to sell or share my data.
+
+Install uBlock Origin (or log in to Firefox Sync if you already have this plugin). In its options:
+
+* Filter lists > Cookie Notices > Enable all.
+* Filter lists > Privacy > AdGuard URL tracking protection
+* Click on update now.
 
 #### Discord
 
