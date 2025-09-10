@@ -211,6 +211,7 @@ sudo pacman -Syu audacious
 * Settings > Audio > Pipewire output
 * Settings > Playlist > Disable pause instead of resuming immediately
 * Plugins > Status icon > Enable and close to window tray
+* Add the line `"SKIP_HOST_UPDATE": true` to ~/.config/discord/settings.json
 
 #### Libreoffice
 
