@@ -108,25 +108,3 @@
     }
   ]
 }
-
-/*
-    "os",
-    "kernel",
-    "shell",
-    "display",
-    "de",
-    "wm",
-    "wmtheme",
-    "theme",
-    "icons",
-    "font",
-    "cursor",
-    "terminal",
-    "terminalfont",
-    "cpu",
-    "gpu",
-    { "type": "memory", "format": "{total}" },
-    "battery",
-    "poweradapter",
-    "break"
-    */
