@@ -177,7 +177,7 @@ sudo pacman -Syu noto-fonts noto-fonts-emoji ttf-noto-nerd
 #### KDE Plasma
 
 ```bash
-sudo pacman -Syu plasma-desktop kscreen breeze-gtk kde-gtk-config xdg-desktop-portal-kde plasma-nm plasma-pa gwenview qt6-imageformats kimageformats kcolorchooser dolphin spectacle kate markdownpart kitty
+sudo pacman -Syu plasma-desktop kscreen breeze-gtk kde-gtk-config xdg-desktop-portal-kde plasma-nm plasma-pa gwenview qt6-imageformats kimageformats kcolorchooser dolphin spectacle kate markdownpart konsole
 ```
 
 * Launch KDE from TTY for now.
