@@ -284,7 +284,7 @@ Upload your public key to your repo hosting.
 Replace the URL with your repo if necessary.
 
 ```bash
-sudo pacman -Syu bat less btop chezmoi eza fd ffmpeg ncdu ripgrep zsh zsh-autosuggestions zsh-syntax-highlighting starship fastfetch
+sudo pacman -Syu bat less btop rocm-smi-lib chezmoi eza fd ffmpeg ncdu ripgrep zsh zsh-autosuggestions zsh-syntax-highlighting starship fastfetch
 chsh -s /usr/bin/zsh
 chezmoi init --apply --verbose git@github.com:joseasoler/dotfiles.git
 git config --global pager.log 'bat -p -l gitlog'
