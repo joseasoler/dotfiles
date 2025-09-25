@@ -258,6 +258,8 @@ sudo pacman -Syu audacious
 
 #### Libreoffice
 
+Replace spell checker languages with the ones you need.
+
 ```bash
 sudo pacman -Syu libreoffice-fresh hunspell hunspell-en_gb hunspell-es_es
 ```
@@ -265,6 +267,12 @@ sudo pacman -Syu libreoffice-fresh hunspell hunspell-en_gb hunspell-es_es
 * Launch Libreoffice.
 * Tools > Options > Languages and Locales > General > Default Languages for Documents > Western > English (UK)
 * Tools > Options > Languages and Locales > Writing Aids > Hunspell SpellChecker enabled.
+
+#### pkgstats
+
+```bash
+sudo pacman -Syu pkgstats
+```
 
 ## Dotfiles setup
 
