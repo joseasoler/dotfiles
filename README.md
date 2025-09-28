@@ -53,7 +53,7 @@ Follow the Arch Linux [Installation Guide](https://wiki.archlinux.org/title/Inst
 Install the base system, [boot loader](https://wiki.archlinux.org/title/Arch_boot_process#Boot_loader) and network packages.
 
 ```bash
-pacstrap -K /mnt base base-devel linux linux-firmware amd-ucode nano grub efibootmgr os-prober wireless_tools networkmanager
+pacstrap -K /mnt base base-devel linux linux-firmware amd-ucode nano grub efibootmgr os-prober wireless_tools networkmanager man-db
 ```
 
 #### Boot Loader
