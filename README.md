@@ -276,6 +276,8 @@ sudo pacman -Syu clang code
 
 Install these extensions: clangd, {LLVM}, cmake-tools {Microsoft}, C/C++ Debug (gdb) {KylinIdeTeam}.
 
+* Set CMake: Copy Compile Commands to ${workspaceFolder}/compile_commands.json
+
 #### pkgstats
 
 ```bash
