@@ -268,6 +268,14 @@ sudo pacman -Syu libreoffice-fresh hunspell hunspell-en_gb hunspell-es_es
 * Tools > Options > Languages and Locales > General > Default Languages for Documents > Western > English (UK)
 * Tools > Options > Languages and Locales > Writing Aids > Hunspell SpellChecker enabled.
 
+#### vscode
+
+```bash
+sudo pacman -Syu clang code
+```
+
+Install these extensions: clangd, {LLVM}, cmake-tools {Microsoft}, C/C++ Debug (gdb) {KylinIdeTeam}.
+
 #### pkgstats
 
 ```bash
