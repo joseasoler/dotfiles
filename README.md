@@ -274,7 +274,7 @@ sudo pacman -Syu libreoffice-fresh hunspell hunspell-en_gb hunspell-es_es
 sudo pacman -Syu clang code
 ```
 
-Install these extensions: clangd, {LLVM}, cmake-tools {Microsoft}, C/C++ Debug (gdb) {KylinIdeTeam}.
+Install these extensions: clangd, {LLVM}, cmake-tools {Microsoft}, C/C++ Debug (gdb) {KylinIdeTeam}, cmake-format {chesirekow}.
 
 * Set CMake: Copy Compile Commands to ${workspaceFolder}/compile_commands.json
 
