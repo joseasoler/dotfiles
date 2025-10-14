@@ -10,6 +10,7 @@
 * [KDE](https://wiki.archlinux.org/title/KDE)
 * [multilib](https://wiki.archlinux.org/title/Official_repositories#multilib) support
 * Windows dual boot.
+* Spanish numbers, dates and conventions. User interface in American English.
 
 ## System Setup
 
@@ -54,6 +55,26 @@ Install the base system, [boot loader](https://wiki.archlinux.org/title/Arch_boo
 
 ```bash
 pacstrap -K /mnt base base-devel linux linux-firmware amd-ucode nano grub efibootmgr os-prober wireless_tools networkmanager man-db
+```
+
+#### Locale
+
+```bash
+sudo nano /etc/locale.gen
+```
+
+Uncomment the es_ES.UTF-8 UTF-8 and en_US.UTF-8 UTF-8 lines.
+
+```bash
+sudo nano /etc/locale.conf
+```
+
+Set to:
+
+```bash
+LANG=es_ES.UTF-8
+LC_MESSAGES=en_US.UTF-8
+LC_COLLATE=C.UTF-8
 ```
 
 #### Boot Loader
