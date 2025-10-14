@@ -88,6 +88,8 @@ grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
+Follow the instructions in [grub-mkconfig_at_each_grub_update](https://wiki.archlinux.org/title/GRUB#Warning_to_perform_grub-install/grub-mkconfig_at_each_grub_update) to ensure the config gets updated when it should.
+
 #### Post-installation
 
 * Enable, configure and test [NetworkManager](https://wiki.archlinux.org/title/NetworkManager).
