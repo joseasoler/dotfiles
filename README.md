@@ -134,6 +134,12 @@ sudo systemctl enable --now doh-client.service
 
 Follow the [Arch Linux NetworkManager wiki page](https://wiki.archlinux.org/title/NetworkManager#Setting_custom_global_DNS_servers) instructions for setting a custom global DNS server pointing to localhost.
 
+#### pacdiff
+
+```bash
+sudo pacman -Syu pacman-contrib
+```
+
 #### makepkg
 
 Configure [makepkg](https://wiki.archlinux.org/title/makepkg) to reduce compile times and optimize binaries. Flags taken from [ALPH flags](https://somegit.dev/ALHP/ALHP.GO/src/branch/main/flags.yaml). Check that they are up to date.
@@ -194,7 +200,7 @@ sudo pacman -Syu pipewire lib32-pipewire
 #### Fonts
 
 ```bash
-sudo pacman -Syu noto-fonts noto-fonts-emoji ttf-noto-nerd
+sudo pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-noto-nerd
 ```
 
 #### KDE Plasma
@@ -295,9 +301,11 @@ sudo pacman -Syu libreoffice-fresh hunspell hunspell-en_gb hunspell-es_es
 
 ```bash
 sudo pacman -Syu clang code
+# Dependencies of Fzf Picker
+sudo pacman -Syu fzf nodejs ripgrep bat
 ```
 
-Install these extensions: clangd, {LLVM}, cmake-tools {Microsoft}, C/C++ Debug (gdb) {KylinIdeTeam}, cmake-format {chesirekow}.
+Install these extensions: clangd, {LLVM}, cmake-tools {Microsoft}, C/C++ Debug (gdb) {KylinIdeTeam}, cmake-format {chesirekow}, Fzf Picker.
 
 * Set CMake: Copy Compile Commands to ${workspaceFolder}/compile_commands.json
 
@@ -305,6 +313,12 @@ Install these extensions: clangd, {LLVM}, cmake-tools {Microsoft}, C/C++ Debug (
 
 ```bash
 sudo pacman -Syu pkgstats
+```
+
+#### System updates
+
+```bash
+sudo pacman -Syu && DIFFPROG=diff pacdiff
 ```
 
 ## Dotfiles setup
