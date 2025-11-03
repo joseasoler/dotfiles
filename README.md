@@ -306,6 +306,12 @@ sudo pacman -Syu libreoffice-fresh hunspell hunspell-en_gb hunspell-es_es
 * Tools > Options > Languages and Locales > General > Default Languages for Documents > Western > English (UK)
 * Tools > Options > Languages and Locales > Writing Aids > Hunspell SpellChecker enabled.
 
+#### vlc
+
+```bash
+sudo pacman -Syu vlc vlc-plugin-ffmpeg
+```
+
 #### vscode
 
 ```bash
