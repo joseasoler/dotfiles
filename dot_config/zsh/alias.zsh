@@ -10,8 +10,8 @@ alias lx='ls -l --sort extension' # Sort by extension.
 # Replace cat with bat.
 alias cat='bat'
 
-# Replace du with ncdu.
-alias du='ncdu --color dark'
+# Replace du with dust.
+alias du='dust'
 
 # Generic alias for the "fetch" application used in the dotfiles.
 alias fetch='fastfetch'

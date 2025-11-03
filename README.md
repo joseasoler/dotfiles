@@ -166,7 +166,11 @@ RUSTFLAGS:
 
 #### git
 
+.gitconfig is not included into the dotfiles to avoid including personal information.
+
 ```bash
+sudo pacman -Syu git git-delta
+
 git config --global user.name 'Full Name'
 git config --global user.email "your.email@example.ex"
 git config --global init.defaultBranch main
@@ -176,6 +180,11 @@ git config --global merge.ff false
 git config --global core.commentChar '>'
 git config --global core.editor 'nano'
 git config --global color.ui true
+git config --global core.pager delta
+git config --global interactive.diffFilter 'delta --color-only'
+git config --global delta.navigate true
+git config --global merge.conflictStyle zdiff3
+git config --global delta.line-numbers true
 ```
 
 #### paru
@@ -183,7 +192,7 @@ git config --global color.ui true
 [paru](https://github.com/Morganamilo/paru) is the [pacman wrapper](https://wiki.archlinux.org/title/AUR_helpers#Pacman_wrappers) used by these dotfiles.
 
 ```bash
-sudo pacman -Syu git rust
+sudo pacman -Syu rust
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
@@ -318,7 +327,7 @@ sudo pacman -Syu pkgstats
 #### System updates
 
 ```bash
-sudo pacman -Syu && DIFFPROG=diff pacdiff
+paru -Syu && DIFFPROG=diff pacdiff
 ```
 
 ## Dotfiles setup
@@ -339,7 +348,7 @@ Upload your public key to your repo hosting.
 Replace the URL with your repo if necessary.
 
 ```bash
-sudo pacman -Syu bat less btop rocm-smi-lib chezmoi eza fd ffmpeg ncdu ripgrep zsh zsh-autosuggestions zsh-syntax-highlighting starship fastfetch
+sudo pacman -Syu bat less btop rocm-smi-lib chezmoi eza fd ffmpeg dust ripgrep zsh zsh-autosuggestions zsh-syntax-highlighting starship fastfetch
 chsh -s /usr/bin/zsh
 chezmoi init --apply --verbose git@github.com:joseasoler/dotfiles.git
 git config --global pager.log 'bat -p -l gitlog'
