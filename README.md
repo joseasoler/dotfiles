@@ -206,6 +206,13 @@ rm -rf paru
 sudo pacman -Syu pipewire lib32-pipewire
 ```
 
+#### Bluetooth
+
+```bash
+sudo pacman -Syu bluez bluez-utils
+sudo systemctl enable --now bluetooth.service
+```
+
 #### Fonts
 
 ```bash
