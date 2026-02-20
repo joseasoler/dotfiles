@@ -331,6 +331,15 @@ Install these extensions: clangd, {LLVM}, cmake-tools {Microsoft}, C/C++ Debug (
 
 * Set CMake: Copy Compile Commands to ${workspaceFolder}/compile_commands.json
 
+#### Data management
+
+```bash
+# For using the epub2mobi alias to convert ebooks.
+sudo pacman -Syu calibre
+# For downloading podcasts.
+sudo pacman -Syu yt-dlp
+```
+
 #### pkgstats
 
 ```bash

@@ -31,5 +31,8 @@ alias open='xdg-open'
 # Convert flac to mp3 and copy them all to the parameter path.
 alias flac2mp3='fd -t f -e flac -x ffmpeg -i "{}" -qscale:a 0 "{.}.mp3" && fd -t f -e mp3 -x mv -n --debug "{.}.mp3"'
 
+# Convert epub to mobi.
+alias epub2mobi='for file in *.epub; do ebook-convert "$file" "${file%.epub}.mobi"; done'
+
 # Common mistypes.
 alias cd..='cd ..'
