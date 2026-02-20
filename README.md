@@ -235,14 +235,12 @@ sudo pacman -Syu plasma-desktop kscreen breeze-gtk kde-gtk-config xdg-desktop-po
 
 * Sound > Configure Volume Controls > Disable Play audio feedback for changes
 
-#### SDDM
+#### Plasma Login Manager
 
 ```bash
-sudo pacman -Syu sddm sddm-kcm qt5-declarative
-sudo systemctl enable sddm.service
+sudo pacman -Syu plasma-login-manager
+sudo systemctl enable plasmalogin
 ```
-
-Reboot and test. After logging in, set the SDDM theme to breeze.
 
 #### Firefox
 
