@@ -346,8 +346,10 @@ sudo pacman -Syu pkgstats
 
 #### System updates
 
+Update the system using the following command. Resolve any pacnew/pacsave files, and then reboot the system.
+
 ```bash
-paru -Syu && DIFFPROG=diff pacdiff
+paru -Syu && pacdiff -s
 ```
 
 ## Dotfiles setup
