@@ -1,6 +1,6 @@
 # Dotfiles
 
-[Arch Linux](https://archlinux.org/) managed using [chezmoi](https://github.com/twpayne/chezmoi). This repository may contain files from other sources. In that case, each one of them will have its own LICENSE file. All other content is under the [UNLICENSE](UNLICENSE).
+[Arch Linux](https://archlinux.org/) dotfiles managed using [chezmoi](https://github.com/twpayne/chezmoi). Content is under the [UNLICENSE](UNLICENSE).
 
 ## System
 
@@ -37,7 +37,7 @@ reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation
 
 ### Arch Linux
 
-Follow the Arch Linux [Installation Guide](https://wiki.archlinux.org/title/Installation_guide). This README contains specific choices to take at specific points of the official guide.
+This section contains reminders of the choices taken while following the Arch Linux [Installation Guide](https://wiki.archlinux.org/title/Installation_guide). The Arch Linux wiki should always be followed, as the information on this document will likely become outdated.
 
 #### Partitions
 
@@ -79,7 +79,7 @@ LC_COLLATE=C.UTF-8
 
 #### Boot Loader
 
-Follow the [GRUB](https://wiki.archlinux.org/title/GRUB) page. The instructions below are a reminder.
+Follow the [GRUB](https://wiki.archlinux.org/title/GRUB) page. The instructions below are just reminders.
 
 ```bash
 # Uncomment the GRUB_DISABLE_OS_PROBER=false line.
@@ -88,7 +88,7 @@ grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-Follow the instructions in [grub-mkconfig_at_each_grub_update](https://wiki.archlinux.org/title/GRUB#Warning_to_perform_grub-install/grub-mkconfig_at_each_grub_update) to ensure the config gets updated when it should.
+Follow the instructions in [grub-mkconfig_at_each_grub_update](https://wiki.archlinux.org/title/GRUB#Warning_to_perform_grub-install/grub-mkconfig_at_each_grub_update) so GRUB configuration gets updated when it should.
 
 #### Post-installation
 
@@ -272,8 +272,9 @@ sudo pacman -Syu discord
 ```
 
 * Launch discord so it will ask about KWallet. Set KWallet to blowfish and use the same password as the account password. SDDM is already set up to load KWallet automatically on login from now on.
-
 * Add discord to KDE auto start applications.
+* Add the line `"SKIP_HOST_UPDATE": true` to ~/.config/discord/settings.json
+
 
 #### Steam
 
@@ -297,7 +298,6 @@ sudo pacman -Syu audacious
 * Settings > Audio > Pipewire output
 * Settings > Playlist > Disable pause instead of resuming immediately
 * Plugins > Status icon > Enable and close to window tray
-* Add the line `"SKIP_HOST_UPDATE": true` to ~/.config/discord/settings.json
 
 #### Libreoffice
 
@@ -352,22 +352,9 @@ Update the system using the following command. Resolve any pacnew/pacsave files,
 paru -Syu && pacdiff -s
 ```
 
-## Dotfiles setup
+## Dotfiles 
 
-### Private key
-
-Required for write access to the dotfiles repo.
-
-```bash
-sudo pacman -Syu openssh
-ssh-keygen -t ed25519 -C "your.email@example.ex"
-```
-
-Upload your public key to your repo hosting.
-
-### Dotfiles installation
-
-Replace the URL with your repo if necessary.
+Set up a private key if necessary and then follow these instructions. Replace the URL with HTTPS or your own repo if needed.
 
 ```bash
 sudo pacman -Syu bat less btop rocm-smi-lib chezmoi eza fd ffmpeg dust ripgrep zsh zsh-autosuggestions zsh-syntax-highlighting starship fastfetch
