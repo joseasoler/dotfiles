@@ -1,5 +1,7 @@
 # Dotfiles
 
+**Moved to:** https://codeberg.org/joseasoler/dotfiles
+
 [Arch Linux](https://archlinux.org/) dotfiles managed using [chezmoi](https://github.com/twpayne/chezmoi). Content is under the [UNLICENSE](UNLICENSE).
 
 ## System
